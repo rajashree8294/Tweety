@@ -1,0 +1,79 @@
+<div class="container-fluid">
+  <h3 class="text"><u>Signup</u></h3>
+  <h3></h3>
+  <div class="alert alert-danger" role="alert" *ngIf="isUserExist">
+    User already exist. Go to <a routerLink="/login" class="alert-link">Login</a> Page to proceed.
+  </div>
+
+  <div class="alert alert-danger" role="alert" *ngIf="isIdTaken">
+    User Id is taken! Please try something else.
+  </div>
+
+  <div class="alert alert-danger" role="alert" *ngIf="isEmailExist">
+    Account already exist with this email address.
+  </div>
+
+  <div class="alert alert-danger" role="alert" *ngIf="serverError">
+    Server Error while registering user.
+  </div>
+
+  <div class="alert alert-success" *ngIf="isSuccess" role="alert">
+      User Registration Successful. Go to <a routerLink="/login" class="alert-link">Login</a> Page.
+  </div>
+
+  <form [formGroup]="signupForm" (ngSubmit)="onSubmit()">
+      <div class="form-row mb-4">
+          <div class="col">
+              <input type="text" class="form-control" formControlName="firstName" placeholder="First name">
+              <div *ngIf="processingStart && signupForm.controls.firstName.errors" class="error">
+                <div class="text" *ngIf="signupForm.controls.firstName.errors.required">Mandatory field</div>
+                <div class="text" *ngIf="signupForm.controls.firstName.errors.pattern"> Invalid First name</div>
+              </div>
+          </div>
+          <div class="col">
+              <input type="text" class="form-control" formControlName="lastName" placeholder="Last name">
+              <div *ngIf="processingStart && signupForm.controls.lastName.errors" class="error">
+                <div class="text" *ngIf="signupForm.controls.lastName.errors.required">Mandatory field</div>
+                <div class="text" *ngIf="signupForm.controls.lastName.errors.pattern">Invalid Last name</div>
+              </div>
+          </div>
+      </div>
+     
+      <div class="mb-4">
+        <input type="email" class="form-control" formControlName="email" placeholder="E-mail">
+        <div *ngIf="processingStart && signupForm.controls.email.errors" class="error">
+          <div class="text" *ngIf="signupForm.controls.email.errors.required"> Email is mandatory</div>
+          <div class="text" *ngIf="signupForm.controls.email.errors.email"> Invalid Email Id</div>
+        </div>
+      </div>
+
+      <div class="mb-4">
+        <input type="text" class="form-control" formControlName="userid" id="userid" placeholder="User ID">
+        <div *ngIf="processingStart && signupForm.controls.userid.errors" class="error">
+          <div class="text" *ngIf="signupForm.controls.userid.errors.required">Mandatory field</div>
+          <div class="text" *ngIf="signupForm.controls.userid.errors.pattern"> Only Alphabets </div>
+        </div>
+      </div>
+
+      <div class="form-row mb-4">
+          <div class="col">
+              <input type="password" class="form-control" formControlName="password" placeholder="Password">
+              <div *ngIf="processingStart && signupForm.controls.password.errors" class="error">
+                <div class="text" *ngIf="signupForm.controls.password.errors.required"> Password is mandatory</div>
+                <div class="text" *ngIf="signupForm.controls.password.errors.pattern"> 8 characters long, [A-Z], [0-9] and Symbols</div>
+              </div>
+          </div>
+          <div class="col">
+              <input type="password" class="form-control"  formControlName="repassword" placeholder="Retype Password">
+              <div *ngIf="processingStart && signupForm.controls.repassword.errors" class="error">
+                <div class="text" *ngIf="signupForm.controls.repassword.errors? signupForm.controls.repassword.errors.required : false"> Confirm your password</div>
+              </div>
+              <div *ngIf="processingStart && signupForm['errors']" class="error">
+                <div class="text" *ngIf="signupForm['errors']? signupForm['errors']['notSame'] : false">Passwords do not match</div>
+              </div>
+          </div>
+      </div>
+
+      <button class="btn btn-info my-4 btn-block" type="submit">Sign Up</button>
+  </form>
+</div>

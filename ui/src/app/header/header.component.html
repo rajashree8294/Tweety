@@ -1,0 +1,42 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+</button>
+
+<a class="navbar-brand" style="color: rgb(16, 153, 245);">Hi, {{username}}</a>
+
+<div class="collapse navbar-collapse" id="navbarTogglerDemo03">
+    <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+    <li class="nav-item">
+        <!-- About Us -->
+    </li>
+    <li class="nav-item">
+        <!-- Contact Us -->
+    </li>
+    <li class="nav-item"></li>
+    </ul>
+    <form class="form-inline my-2 my-lg-0" autocomplete="off">
+        <input type="text" (keyup)="suggest()"  [(ngModel)]="key" name="key" id="userIdFirstWay" list="dynmicUserIds" />
+        <datalist id="dynmicUserIds">
+            <option *ngFor="let item of userList1" [value]="item">{{item}}</option>
+        </datalist>
+        <!-- <input class="form-control" matInput type="search" placeholder="Search" aria-label="Search" name="key" [(ngModel)]="key"> -->
+        <button class="btn my-2 my-sm-0" type="submit">
+                <i class="fa fa-search fa-lg" (click)="search()"></i>
+        </button>
+    </form>
+    <button class="btn my-2 my-sm-0 dropdown" *ngIf="!isAdmin" (click)="main()">
+        <i class="fa fa-home fa-2x"></i>
+    </button>
+    <button class="btn my-2 my-sm-0 dropdown" *ngIf="isAdmin" (click)="adminPortal()">
+        <i class="fa fa-home fa-2x"></i>
+    </button>
+    <button class="btn my-2 my-sm-0 dropdown" *ngIf="!isAdmin" (click)="profile()">
+        <i class="fa fa-user-circle fa-2x"></i>
+    </button>
+
+    <button class="btn my-2 my-sm-0 dropdown" (click)="logout()">
+        <i class="fa fa-sign-out fa-2x"></i>
+    </button>
+</div>
+</nav>

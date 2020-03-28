@@ -1,0 +1,181 @@
+All POST?PUT Request' Responses
+
+Add New Tweet Response: 
+{
+    "userid": "@test1",
+    "emailid": "test2@gmail.com",
+    "password": "test2password",
+    "fname": "Test2_fname",
+    "lname": "Test2_lname",
+    "role": "user",
+    "tweets": [
+        {
+            "tweetid": 7,
+            "tweet": "This is my 1st tweet",
+            "userid": "@test1",
+            "date": null
+        },
+        {
+            "tweetid": 49,
+            "tweet": "This is my new tweet",
+            "userid": "@test1",
+            "date": 1576019241586
+        }
+    ],
+    "replies": [],
+    "connections": [],
+    "followings": []
+}
+
+Add New Comment/Reply Response
+{
+    "userid": "@test",
+    "emailid": "test@gmail.com",
+    "password": "testpassword",
+    "fname": "test_first",
+    "lname": "test_last",
+    "role": "user",
+    "tweets": [
+        {
+            "tweetid": 44,
+            "tweet": "One",
+            "userid": "@test",
+            "date": 1576007892000
+        },
+        {
+            "tweetid": 46,
+            "tweet": "harry potter",
+            "userid": "@test",
+            "date": 1576007974000
+        },
+        {
+            "tweetid": 47,
+            "tweet": "Heya",
+            "userid": "@test",
+            "date": 1576008307000
+        },
+        {
+            "tweetid": 42,
+            "tweet": "Hello",
+            "userid": "@test",
+            "date": 1576003940000
+        }
+    ],
+    "replies": [
+        {
+            "replyid": 1,
+            "reply": "replying to tweet 7",
+            "tweetid": 7,
+            "userid": "@test"
+        },
+        {
+            "replyid": 4,
+            "reply": "replying to tweet 40",
+            "tweetid": 40,
+            "userid": "@test"
+        }
+    ],
+    "connections": [
+        {
+            "connectionid": 6,
+            "from_userid": "@test",
+            "to_userid": "@ll",
+            "status": 1,
+            "date": 1575777514000
+        },
+        {
+            "connectionid": 2,
+            "from_userid": "@test",
+            "to_userid": "@test1",
+            "status": 1,
+            "date": 1575501333000
+        }
+    ],
+    "followings": [
+        {
+            "followid": 10,
+            "follower_userid": "@test",
+            "following_userid": "@ll"
+        }
+    ]
+}
+
+Send Connection Request: 
+
+{
+    "user": {
+        "userid": "@test1",
+        "emailid": "test2@gmail.com",
+        "password": "test2password",
+        "fname": "Test2_fname",
+        "lname": "Test2_lname",
+        "role": "user",
+        "tweets": [
+            {
+                "tweetid": 7,
+                "tweet": "This is my 1st tweet",
+                "userid": "@test1",
+                "date": null
+            },
+            {
+                "tweetid": 49,
+                "tweet": "This is my new tweet",
+                "userid": "@test1",
+                "date": 1576019242000
+            }
+        ],
+        "replies": [],
+        "connections": [
+            {
+                "connectionid": 7,
+                "from_userid": "@test1",
+                "to_userid": "@ll",
+                "status": 0,
+                "date": 1576022732416
+            }
+        ],
+        "followings": []
+    },
+    "requestConfirmation": "Connection Request Sent Successfully!"
+}
+
+Follow User :
+
+{
+    "userid": "@@abc",
+    "emailid": "abc@tweety.com",
+    "password": "Password@1",
+    "fname": "Krish",
+    "lname": "Jain",
+    "role": "user",
+    "tweets": [
+        {
+            "tweetid": 48,
+            "tweet": "Hey my first tweet",
+            "userid": "@@abc",
+            "date": 1576012063000
+        }
+    ],
+    "replies": [
+        {
+            "replyid": 3,
+            "reply": "replying to tweet 40",
+            "tweetid": 40,
+            "userid": "@@abc"
+        }
+    ],
+    "connections": [],
+    "followings": [
+        {
+            "followid": 12,
+            "follower_userid": "@@abc",
+            "following_userid": "@test"
+        },
+        {
+            "followid": 11,
+            "follower_userid": "@@abc",
+            "following_userid": "@ll"
+        }
+    ]
+}
+

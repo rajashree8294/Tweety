@@ -1,0 +1,11 @@
+<div class="container-fluid">
+<app-header></app-header>
+<div class="card mb-3">
+  <img src="../../assets/cover1.webp" class="card-img-top" alt="...">
+  <div class="card-body">
+    <h5 class="card-title"><b>{{userid}}</b></h5> <h3>{{username}}</h3>
+    <p class="card-text"><small class="text-muted">Following: {{following}} Followers: {{followers}} Tweets: {{tweets}}</small></p>
+    <p class="card-text"><button *ngIf="showBtn" class="btn btn-outline-info my-2 my-sm-0" type="submit" (click)="action()">{{btnText}}</button></p>
+  </div>
+</div>
+</div>

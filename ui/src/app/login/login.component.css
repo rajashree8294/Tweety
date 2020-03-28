@@ -1,0 +1,21 @@
+.container-fluid{
+    flex-direction: column;
+    background-color: black;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.text{
+    color: white;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.form-control{
+    width: 130%;
+}
+
+.btn-block{
+    width: 130%;
+}

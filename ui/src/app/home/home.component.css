@@ -1,0 +1,28 @@
+.cols{
+    height: 90vh;
+}
+
+.btn{
+    width: 25vw;
+    border-radius: 50px;
+}
+
+.signBtn{ 
+    background-color: rgb(39, 186, 245);
+    border-color: rgb(39, 186, 245);
+    color: white;
+    font-weight: bold;
+}
+
+.logBtn{
+    color: rgb(39, 186, 245);
+    border-color: rgb(39, 186, 245);
+    font-weight: bold;
+}
+
+li{
+  list-style-type: none;
+  margin-bottom: 10px;
+  color: white;
+  font-weight: bold;
+}

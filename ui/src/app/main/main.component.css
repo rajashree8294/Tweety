@@ -1,0 +1,49 @@
+.container-fluid{
+    background-color: black;
+    height: 115vh;
+}
+
+.text{
+    color: rgb(16, 153, 245);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+ul> li >p{
+    color: white;
+}
+
+ul, li{
+    list-style-type: none;
+}
+
+hr{
+    border: 1px solid rgb(16, 153, 245);
+}
+
+::ng-deep.mat-tab-group.mat-primary .mat-ink-bar, ::ng-deep.mat-tab-nav-bar.mat-primary .mat-ink-bar{
+    background-color: rgb(16, 153, 245);
+}
+
+::ng-deep.mat-tab-label-content{
+    color: rgb(16, 153, 245);;
+}
+
+.tab-item{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: black;
+}
+
+table {
+    width: 80vw;
+}
+th, td{
+    color: white;
+}
+
+::ng-deep.mat-paginator-page-size-label, ::ng-deep.mat-paginator-range-label, ::ng-deep.mat-select-value,
+::ng-deep.mat-select-arrow-wrapper{
+    color: white;
+}

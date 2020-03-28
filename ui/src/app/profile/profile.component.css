@@ -1,0 +1,8 @@
+.container-fluid{
+    background-color: black;
+    height: 100vh;
+}
+
+.card-img-top{
+    height: 59vh;
+}

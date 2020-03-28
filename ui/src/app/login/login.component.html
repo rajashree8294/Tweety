@@ -1,0 +1,30 @@
+<div class="container-fluid">
+    <h3 class="text"><u>Login</u></h3>
+    <h3></h3>
+    <div class="alert alert-danger" role="alert" *ngIf="isUserNotExist">
+      Invalid Credentials. 
+    </div>
+
+    <div class="alert alert-success" *ngIf="isSuccess" role="alert">
+        User Logged in Successfully.
+    </div>
+  
+    <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+        <div class="mb-4">
+          <input type="email" class="form-control" formControlName="email" placeholder="E-mail">
+          <div *ngIf="processingStart && loginForm.controls.email.errors" class="error">
+            <div class="text" *ngIf="loginForm.controls.email.errors.required"> Email is mandatory</div>
+            <div class="text" *ngIf="loginForm.controls.email.errors.email"> Invalid Email Id</div>
+          </div>
+        </div>
+  
+        <div class="mb-4">
+          <input type="password" class="form-control" formControlName="password" placeholder="Password">
+          <div *ngIf="processingStart && loginForm.controls.password.errors" class="error">
+            <div class="text" *ngIf="loginForm.controls.password.errors.required"> Password is mandatory</div>
+          </div>
+        </div>
+  
+        <button class="btn btn-info my-4 btn-block" type="submit">Login</button>
+    </form>
+  </div>

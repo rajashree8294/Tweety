@@ -1,0 +1,30 @@
+
+<mat-grid-list cols="2" rowHeight="2:1" gutterSize="0px" class="cols">
+    <mat-grid-tile class="cols" style="background-color: rgb(39, 186, 245);">
+        <ul>
+            <li>
+                <h4><i class="fa fa-search fa-lg" aria-hidden="true"></i> &nbsp; Follow your interests.</h4><br/>
+            </li>
+            <li>
+                <h4><i class="fa fa-users fa-lg" aria-hidden="true"></i> &nbsp; Hear what people are talking about.</h4><br/>
+            </li>
+            <li>
+                <h4><i class="fa fa-comment-o fa-lg" aria-hidden="true"></i> &nbsp; Join the conversation.</h4>
+            </li>
+        </ul>
+    </mat-grid-tile>
+    <mat-grid-tile class="cols" style="background-color: rgb(10, 10, 10);">
+        <ul>
+            <li><i class="fa fa-twitter fa-2x" aria-hidden="true"></i></li>
+            <li><h2>See what’s happening in</h2></li>
+            <li><h2>the world right now</h2><br/></li>
+            <li style="color: aliceblue;">
+                <a href="http://localhost:4200/signup" class="btn btn-light signBtn">Sign Up</a>
+            </li>
+            <li style="color: aliceblue;"> 
+                <a [routerLink]="['/login']" class="btn btn-light logBtn">Login</a>
+            </li>
+        </ul>      
+    </mat-grid-tile>
+</mat-grid-list>
+<app-footer></app-footer>
